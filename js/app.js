@@ -40,4 +40,26 @@ if(questionFiveReply === 'Y' || questionFiveReply === "YES") {
   alert('That\'s right!');
 }
 
+let correctNumber = 9;
+let guessNumber = 0;
+let guessesLeft = 4;
+while(guessNumber !== correctNumber && guessesLeft > 0) {
+  let questionSixReply = prompt('I\'m thikning of a number 1-10. Guess the number!');
+  guessesLeft--;
+
+  guessNumber = parseInt(questionSixReply);
+  if(guessNumber > correctNumber){ 
+    alert('Too high');
+  } else if (guessNumber < correctNumber) {
+    alert('Too low!');
+  } else {
+    alert('Correct!');
+    guessesLeft = 0;
+  }
+  
+  if(guessNumber !== correctNumber && guessesLeft === 0) {
+    alert(`The correct number was ${correctNumber}`);
+  }
+}
+
 alert(`I hope you got them all right. Thanks for playing, ${visitorName}!`);
