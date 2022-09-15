@@ -3,5 +3,27 @@ body {
 }
 
 h1 {
-  font-size: 5vw;
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+h2 {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+ul {
+  text-align: center;
+  font-size: medium;
+  display: list-item;
+  list-style-type: disc;
+}
+
+ol {
+  text-align: center;
+  font-size: medium;
+  display: list-item;
+  list-style-type: decimal;
 }
