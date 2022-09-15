@@ -72,7 +72,7 @@ while(guessNumber !== correctNumber && numberGuessesLeft > 0) {
 let favoriteFruitArray = ['apples', 'bananas', 'oranges', 'grapes', 'mangos', 'pineapples'];
 let fruitGuessesLeft = 6;
 while(fruitGuessesLeft > 0) {
-  let questionSevenReply = prompt('Can you guess my favorite fruit? The answer ends with an \'s\'');
+  let questionSevenReply = prompt('Can you guess my favorite fruit? The answer ends with an \'s\'').toLowerCase();
   fruitGuessesLeft--;
   
   for(let i = 0; i < favoriteFruitArray.length; i++) {
