@@ -2,6 +2,7 @@
 
 console.log('hey world heyyyy')
 
+let score = 0;
 let visitorName = prompt('Howdy, what is your name?');
 alert(`Nice name. Welcome to my site, ${visitorName}! Please answer the following questions with yes or no.`);
 
@@ -10,11 +11,13 @@ if(questionOneReply === 'Y' || questionOneReply === "YES") {
   alert('Nope, not quite.')
 } else if (questionOneReply === 'N' || questionOneReply === 'NO') {
   alert('That\'s right!');
+  score++;
 }
 
 let questionTwoReply = prompt('Do I have cats?').toUpperCase();
 if(questionTwoReply === 'Y' || questionTwoReply === "YES") {
   alert('That\'s right!');
+  score++;
 } else if (questionTwoReply === 'N' || questionTwoReply === 'NO') {
   alert('Incorrect.')
 }
@@ -22,6 +25,7 @@ if(questionTwoReply === 'Y' || questionTwoReply === "YES") {
 let questionThreeReply = prompt('Do I live in Seattle?').toUpperCase();
 if(questionThreeReply === 'Y' || questionThreeReply === "YES") {
   alert('That\'s right!');
+  score++;
 } else if (questionThreeReply === 'N' || questionThreeReply === 'NO') {
   alert('Incorrect.')
 }
@@ -29,6 +33,7 @@ if(questionThreeReply === 'Y' || questionThreeReply === "YES") {
 let questionFourReply = prompt('Have I run a marathon before?').toUpperCase();
 if(questionFourReply === 'Y' || questionFourReply === "YES") {
   alert('That\'s right!');
+  score++;
 } else if (questionFourReply === 'N' || questionFourReply === 'NO') {
   alert('Incorrect.')
 }
@@ -38,28 +43,49 @@ if(questionFiveReply === 'Y' || questionFiveReply === "YES") {
   alert('Not at all, but I do keep one by my desk incase I ever want to try.')
 } else if (questionFiveReply === 'N' || questionFiveReply === 'NO') {
   alert('That\'s right!');
+  score++;
 }
 
 let correctNumber = 9;
 let guessNumber = 0;
-let guessesLeft = 4;
-while(guessNumber !== correctNumber && guessesLeft > 0) {
+let numberGuessesLeft = 4;
+while(guessNumber !== correctNumber && numberGuessesLeft > 0) {
   let questionSixReply = prompt('I\'m thikning of a number 1-10. Guess the number!');
-  guessesLeft--;
+  numberGuessesLeft--;
 
   guessNumber = parseInt(questionSixReply);
-  if(guessNumber > correctNumber){ 
+  if(guessNumber > correctNumber) { 
     alert('Too high');
   } else if (guessNumber < correctNumber) {
     alert('Too low!');
   } else {
     alert('Correct!');
-    guessesLeft = 0;
+    score++;
+    numberGuessesLeft = 0;
   }
   
-  if(guessNumber !== correctNumber && guessesLeft === 0) {
+  if(guessNumber !== correctNumber && numberGuessesLeft === 0) {
     alert(`The correct number was ${correctNumber}`);
   }
 }
 
-alert(`I hope you got them all right. Thanks for playing, ${visitorName}!`);
+let favoriteFruitArray = ['apples', 'bananas', 'oranges', 'grapes', 'mangos', 'pineapples'];
+let fruitGuessesLeft = 6;
+while(fruitGuessesLeft > 0) {
+  let questionSevenReply = prompt('Can you guess my favorite fruit? The answer ends with an \'s\'');
+  fruitGuessesLeft--;
+  
+  for(let i = 0; i < favoriteFruitArray.length; i++) {
+    if(questionSevenReply === favoriteFruitArray[i]) {
+      alert('Correct!')
+      score++;
+      fruitGuessesLeft = 0;
+    }
+  }
+
+  if(fruitGuessesLeft === 0) {
+    alert(`all the possible answers were ${favoriteFruitArray}`)
+  }
+}
+
+alert(`Thanks for playing, ${visitorName}! Your score was ${score}/7!`);
