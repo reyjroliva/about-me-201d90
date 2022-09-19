@@ -12,7 +12,7 @@ questionThree();
 questionFour();
 questionFive();
 questionSix();
-questionSever();
+questionSeven();
 
 alert(`Thanks for playing, ${visitorName}! Your score was ${score}/7!`);
 
